@@ -8,15 +8,16 @@ package "Система" {
 
     [iOS/Android приложение] -up--> HTTP
 
-    [Telegram-бот] -up--> HTTP
+    [Telegram-бот\nдля администрирования\nи модерирования] -up--> HTTP
 }
 
 cloud {
+    [iOS/Android приложение] -> Digits
     [iOS/Android приложение] -> YandexMaps
     [iOS/Android приложение] -> IpApi
     [iOS/Android приложение] -> Autocomple
-    [Telegram-бот] -down--> TelegramApi
-    TelegramApi -up--> [Telegram-бот]
+    [Telegram-бот\nдля администрирования\nи модерирования] -down--> TelegramApi
+    TelegramApi -up--> [Telegram-бот\nдля администрирования\nи модерирования]
 }
 
 @enduml
