@@ -3,12 +3,10 @@ skinparam componentStyle uml2
 
 package "Система" {
     package "Веб-сервис" {
-        HTTP - [REST Веб-сервис\nс базой данных\nв оперативной памяти]
+        HTTP - [REST Веб-сервис,\nTelegram-бот]
     }
 
     [iOS/Android приложение] -up--> HTTP
-
-    [Telegram-бот\nдля администрирования\nи модерирования] -up--> HTTP
 }
 
 cloud {
@@ -16,8 +14,8 @@ cloud {
     [iOS/Android приложение] -> YandexMaps
     [iOS/Android приложение] -> IpApi
     [iOS/Android приложение] -> Autocomple
-    [Telegram-бот\nдля администрирования\nи модерирования] -down--> TelegramApi
-    TelegramApi -up--> [Telegram-бот\nдля администрирования\nи модерирования]
+    Telegram -up--> HTTP
+    [REST Веб-сервис,\nTelegram-бот] -down--> Telegram
 }
 
 @enduml
